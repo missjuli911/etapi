@@ -9,7 +9,7 @@
   <title>Этапы поездки</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -18,9 +18,9 @@
     }
 
     body {
-      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: #ffffff;
-      padding: 32px 16px;
+      padding: 24px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -28,21 +28,24 @@
       user-select: none;
     }
 
+    /* Компактный размер картинок */
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 680px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* Серая надпись сверху */
+    /* Серый текст сверху: обычный курсив Roboto, не жирный */
     .hint {
+      font-family: 'Roboto', sans-serif;
+      font-style: italic;
+      font-weight: 400;
       color: #8c9ba5;
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      margin-bottom: 24px;
+      font-size: 16px;
+      letter-spacing: 0.3px;
+      margin-bottom: 18px;
       text-align: center;
     }
 
@@ -72,12 +75,12 @@
       pointer-events: none;
     }
 
-    /* Кнопки на цифрах 1, 2, 3, 4 */
+    /* Кнопки точно над цифрами 1, 2, 3, 4 */
     .click-target {
       position: absolute;
       top: 75.4%;
       transform: translate(-50%, -50%);
-      width: 6%;
+      width: 7%;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       cursor: pointer;
@@ -104,7 +107,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       width: 100%;
-      margin-top: 18px;
+      margin-top: 14px;
     }
 
     .text-item {
@@ -112,20 +115,20 @@
       justify-content: center;
       align-items: flex-start;
       text-align: center;
-      padding: 0 8px;
+      padding: 0 4px;
     }
 
-    /* Синий текст #3564EB */
+    /* Синий цвет текста строго #3564EB */
     .title-text {
       color: #3564EB;
-      font-size: 21px;
+      font-size: 15px;
       font-weight: 700;
       line-height: 1.25;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       text-transform: uppercase;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
     }
 
@@ -135,15 +138,11 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 900px) {
-      .title-text { font-size: 16px; }
-      .hint { font-size: 16px; }
-    }
-
     @media (max-width: 600px) {
-      .title-text { font-size: 12px; }
-      .hint { font-size: 14px; margin-bottom: 16px; }
-      .text-grid { margin-top: 12px; }
+      .container { max-width: 100%; }
+      .title-text { font-size: 11px; }
+      .hint { font-size: 14px; margin-bottom: 12px; }
+      .text-grid { margin-top: 10px; }
     }
   </style>
 </head>
